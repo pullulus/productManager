@@ -2,10 +2,11 @@ package ru.netology.domain;
 
 import java.util.Objects;
 
-public class Book extends Product{
+public class Book extends Product {
     private String author;
 
     public Book() {
+
         super();
     }
 
@@ -21,10 +22,12 @@ public class Book extends Product{
     }
 
     public String getAuthor() {
+
         return author;
     }
 
     public void setAuthor(String author) {
+
         this.author = author;
     }
 
@@ -39,6 +42,7 @@ public class Book extends Product{
 
     @Override
     public int hashCode() {
+
         return Objects.hash(super.hashCode(), author);
     }
 

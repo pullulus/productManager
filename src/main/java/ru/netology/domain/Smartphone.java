@@ -2,13 +2,14 @@ package ru.netology.domain;
 
 import java.util.Objects;
 
-public class Smartphone extends Product{
+public class Smartphone extends Product {
     private String maker;
 
     public Smartphone() {
     }
 
     public Smartphone(String maker) {
+
         this.maker = maker;
     }
 
@@ -18,10 +19,12 @@ public class Smartphone extends Product{
     }
 
     public String getMaker() {
+
         return maker;
     }
 
     public void setMaker(String maker) {
+
         this.maker = maker;
     }
 
