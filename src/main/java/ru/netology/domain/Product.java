@@ -27,6 +27,7 @@ public class Product {
     }
 
     public String getName() {
+
         return name;
     }
 
@@ -43,6 +44,14 @@ public class Product {
     public void setPrice(int price) {
 
         this.price = price;
+    }
+
+    public boolean matches(String search) {
+
+        if (this.getName().equalsIgnoreCase(search)) {
+            return true;
+        }
+        return false;
     }
 
     @Override

@@ -32,6 +32,14 @@ public class Book extends Product {
     }
 
     @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        return this.getAuthor().equalsIgnoreCase(search);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
