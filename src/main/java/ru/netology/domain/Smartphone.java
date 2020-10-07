@@ -1,0 +1,56 @@
+package ru.netology.domain;
+
+import java.util.Objects;
+
+public class Smartphone extends Product {
+    private String maker;
+
+    public Smartphone() {
+    }
+
+    public Smartphone(String maker) {
+
+        this.maker = maker;
+    }
+
+    public Smartphone(int id, String name, int price, String maker) {
+        super(id, name, price);
+        this.maker = maker;
+    }
+
+    public String getMaker() {
+
+        return maker;
+    }
+
+    public void setMaker(String maker) {
+
+        this.maker = maker;
+    }
+
+    @Override
+    public boolean matches(String search) {
+        return super.matches(search) || this.getMaker().equalsIgnoreCase(search);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Smartphone that = (Smartphone) o;
+        return Objects.equals(maker, that.maker);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), maker);
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "maker='" + maker + '\'' +
+                '}';
+    }
+}
